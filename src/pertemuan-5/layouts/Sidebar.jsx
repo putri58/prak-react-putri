@@ -12,7 +12,7 @@ export default function Sidebar() {
             {/* List Menu */}
             <div id="sidebar-menu" className="mt-10">
                 <ul id="menu-list" className="space-y-3">
-                    <li>
+                    <li>,
                         <div id="menu-1" className="hover:text-hijau flex cursor-pointer items-center rounded-xl p-4 font-medium text-gray-600 hover:bg-green-200 hover:font-extrabold">
                             <LuLayoutDashboard className="mr-4 text-xl" />
                             Dashboard
