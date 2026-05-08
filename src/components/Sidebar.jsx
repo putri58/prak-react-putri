@@ -94,7 +94,7 @@ export default function Sidebar() {
                     Sedap Restaurant Admin Dashboard
                 </span>
                 <p id="footer-copyright" className="font-light text-gray-400">
-                    &copy; 2025 All Right Reserved
+                    &copy; 2026 All Right Reserved
                 </p>
             </div>
         </div>
