@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import PageHeader from "../components/PageHeader";
 import data from "../data/product.json";
+const products = data.product;
 
 export default function Products() {
   const [showForm, setShowForm] = useState(false);
