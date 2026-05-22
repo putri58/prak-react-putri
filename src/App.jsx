@@ -15,10 +15,12 @@ import "./assets/tailwind.css";
 // import AuthLayout from "./layouts/AuthLayout";
 import React, { Suspense } from "react";
 import Loading from "./components/Loading";
+// import Products from "./pages/Products";
 
 const Dashboard = React.lazy(() => import("./pages/Dashboard"))
 const Orders = React.lazy(() => import("./pages/Orders"))
 const Customers = React.lazy(() => import("./pages/Customer"))
+const Products = React.lazy(() => import("./pages/Products"))
 const NotFound = React.lazy(() => import("./pages/NotFound"))
 const Error400 = React.lazy(() => import("./pages/Error400"))
 const Error401 = React.lazy(() => import("./pages/Error401"))
@@ -28,6 +30,7 @@ const Login = React.lazy(() => import("./pages/auth/Login"))
 const Register = React.lazy(() => import("./pages/auth/Register"))
 const Forgot = React.lazy(() => import("./pages/auth/Forgot"))
 const AuthLayout = React.lazy(() => import("./Layouts/AuthLayout"))
+const ProductDetail = React.lazy(() => import("./pages/ProductDetail"))
 
 function App() {
   return (
@@ -37,6 +40,8 @@ function App() {
             <Route path="/" element={<Dashboard />} />
             <Route path="/orders" element={<Orders />} />
             <Route path="/customers" element={<Customers />} />
+            <Route path="/products" element={<Products />} />
+             <Route path="/products/:id" element={<ProductDetail />} />
             <Route path="/error-400" element={<Error400 />} />
             <Route path="/error-401" element={<Error401 />} />
             <Route path="/error-403" element={<Error403 />} />

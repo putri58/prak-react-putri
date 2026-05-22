@@ -67,6 +67,18 @@ export default function Sidebar() {
                         </NavLink>
                     </li>
 
+                    {/* Customers */}
+                    <li>
+                        <NavLink 
+                            to="/products"
+                            id="menu-4" 
+                            className={menuClass}
+                        >
+                            <LuUsers className="mr-4 text-xl" />
+                            Products
+                        </NavLink>
+                    </li>
+
                 </ul>
             </div>
 

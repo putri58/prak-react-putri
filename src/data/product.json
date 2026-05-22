@@ -1,0 +1,274 @@
+{
+  "product": [
+    {
+      "id": 1,
+      "tittle": "Nasi Goreng Instan",
+      "code": "PRD001",
+      "category": "Makanan",
+      "brand": "Sedap Food",
+      "price": 15000,
+      "stock": 120
+    },
+    {
+      "id": 2,
+      "tittle": "Mie Kari Pedas",
+      "code": "PRD002",
+      "category": "Makanan",
+      "brand": "Sedap Food",
+      "price": 12000,
+      "stock": 90
+    },
+    {
+      "id": 3,
+      "tittle": "Teh Melati Botol",
+      "code": "PRD003",
+      "category": "Minuman",
+      "brand": "Fresh Drink",
+      "price": 8000,
+      "stock": 200
+    },
+    {
+      "id": 4,
+      "tittle": "Kopi Susu Premium",
+      "code": "PRD004",
+      "category": "Minuman",
+      "brand": "CoffeeTime",
+      "price": 18000,
+      "stock": 75
+    },
+    {
+      "id": 5,
+      "tittle": "Roti Coklat",
+      "code": "PRD005",
+      "category": "Snack",
+      "brand": "Sweet Bakery",
+      "price": 10000,
+      "stock": 60
+    },
+    {
+      "id": 6,
+      "tittle": "Keripik Kentang",
+      "code": "PRD006",
+      "category": "Snack",
+      "brand": "Crunchy",
+      "price": 14000,
+      "stock": 130
+    },
+    {
+      "id": 7,
+      "tittle": "Sabun Cair Lemon",
+      "code": "PRD007",
+      "category": "Kebutuhan Rumah",
+      "brand": "CleanPro",
+      "price": 25000,
+      "stock": 55
+    },
+    {
+      "id": 8,
+      "tittle": "Shampoo Herbal",
+      "code": "PRD008",
+      "category": "Perawatan",
+      "brand": "NatureCare",
+      "price": 32000,
+      "stock": 40
+    },
+    {
+      "id": 9,
+      "tittle": "Pasta Gigi Fresh",
+      "code": "PRD009",
+      "category": "Perawatan",
+      "brand": "Smile",
+      "price": 17000,
+      "stock": 95
+    },
+    {
+      "id": 10,
+      "tittle": "Air Mineral 600ml",
+      "code": "PRD010",
+      "category": "Minuman",
+      "brand": "AquaLife",
+      "price": 5000,
+      "stock": 300
+    },
+    {
+      "id": 11,
+      "tittle": "Biskuit Keju",
+      "code": "PRD011",
+      "category": "Snack",
+      "brand": "Crunchy",
+      "price": 11000,
+      "stock": 88
+    },
+    {
+      "id": 12,
+      "tittle": "Susu UHT Coklat",
+      "code": "PRD012",
+      "category": "Minuman",
+      "brand": "MilkFresh",
+      "price": 9000,
+      "stock": 150
+    },
+    {
+      "id": 13,
+      "tittle": "Minyak Goreng 1L",
+      "code": "PRD013",
+      "category": "Sembako",
+      "brand": "GoldenOil",
+      "price": 22000,
+      "stock": 70
+    },
+    {
+      "id": 14,
+      "tittle": "Gula Pasir 1Kg",
+      "code": "PRD014",
+      "category": "Sembako",
+      "brand": "SweetSugar",
+      "price": 16000,
+      "stock": 100
+    },
+    {
+      "id": 15,
+      "tittle": "Beras Premium 5Kg",
+      "code": "PRD015",
+      "category": "Sembako",
+      "brand": "RiceTop",
+      "price": 78000,
+      "stock": 35
+    },
+    {
+      "id": 16,
+      "tittle": "Sarden Kaleng",
+      "code": "PRD016",
+      "category": "Makanan",
+      "brand": "OceanFish",
+      "price": 19000,
+      "stock": 65
+    },
+    {
+      "id": 17,
+      "tittle": "Kecap Manis",
+      "code": "PRD017",
+      "category": "Bumbu",
+      "brand": "TasteGood",
+      "price": 13000,
+      "stock": 85
+    },
+    {
+      "id": 18,
+      "tittle": "Saos Sambal",
+      "code": "PRD018",
+      "category": "Bumbu",
+      "brand": "HotTaste",
+      "price": 12000,
+      "stock": 92
+    },
+    {
+      "id": 19,
+      "tittle": "Detergen Bubuk",
+      "code": "PRD019",
+      "category": "Kebutuhan Rumah",
+      "brand": "WashClean",
+      "price": 28000,
+      "stock": 50
+    },
+    {
+      "id": 20,
+      "tittle": "Pewangi Pakaian",
+      "code": "PRD020",
+      "category": "Kebutuhan Rumah",
+      "brand": "SoftFresh",
+      "price": 24000,
+      "stock": 58
+    },
+    {
+      "id": 21,
+      "tittle": "Wafer Vanilla",
+      "code": "PRD021",
+      "category": "Snack",
+      "brand": "SweetSnack",
+      "price": 7000,
+      "stock": 145
+    },
+    {
+      "id": 22,
+      "tittle": "Jus Jeruk Botol",
+      "code": "PRD022",
+      "category": "Minuman",
+      "brand": "FruitJoy",
+      "price": 10000,
+      "stock": 112
+    },
+    {
+      "id": 23,
+      "tittle": "Makaroni Pedas",
+      "code": "PRD023",
+      "category": "Snack",
+      "brand": "HotCrunch",
+      "price": 13000,
+      "stock": 77
+    },
+    {
+      "id": 24,
+      "tittle": "Tissue Wajah",
+      "code": "PRD024",
+      "category": "Perawatan",
+      "brand": "SoftCare",
+      "price": 9000,
+      "stock": 134
+    },
+    {
+      "id": 25,
+      "tittle": "Masker Wajah Aloe Vera",
+      "code": "PRD025",
+      "category": "Perawatan",
+      "brand": "BeautyGlow",
+      "price": 25000,
+      "stock": 42
+    },
+    {
+      "id": 26,
+      "tittle": "Coklat Batang",
+      "code": "PRD026",
+      "category": "Snack",
+      "brand": "ChocoFun",
+      "price": 15000,
+      "stock": 80
+    },
+    {
+      "id": 27,
+      "tittle": "Madu Murni 250ml",
+      "code": "PRD027",
+      "category": "Kesehatan",
+      "brand": "HoneyPure",
+      "price": 45000,
+      "stock": 28
+    },
+    {
+      "id": 28,
+      "tittle": "Vitamin C Tablet",
+      "code": "PRD028",
+      "category": "Kesehatan",
+      "brand": "HealthPlus",
+      "price": 38000,
+      "stock": 66
+    },
+    {
+      "id": 29,
+      "tittle": "Sikat Gigi Anak",
+      "code": "PRD029",
+      "category": "Perawatan",
+      "brand": "SmileKids",
+      "price": 12000,
+      "stock": 97
+    },
+    {
+      "id": 30,
+      "tittle": "Hand Sanitizer",
+      "code": "PRD030",
+      "category": "Kesehatan",
+      "brand": "SafeHands",
+      "price": 21000,
+      "stock": 73
+    }
+  ]
+}
