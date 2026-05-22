@@ -29,7 +29,7 @@ const MainLayout = React.lazy(() => import("./layouts/MainLayout"))
 const Login = React.lazy(() => import("./pages/auth/Login"))
 const Register = React.lazy(() => import("./pages/auth/Register"))
 const Forgot = React.lazy(() => import("./pages/auth/Forgot"))
-const AuthLayout = React.lazy(() => import("./Layouts/AuthLayout"))
+const AuthLayout = React.lazy(() => import("./layouts/AuthLayout"))
 const ProductDetail = React.lazy(() => import("./pages/ProductDetail"))
 
 function App() {
