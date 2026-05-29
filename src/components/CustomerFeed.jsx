@@ -18,7 +18,7 @@ export default function CustomerFeed() {
                             <div>
                                 <p className="text-sm font-semibold text-gray-800">{item.name}</p>
                                 <p className="text-xs text-gray-500">{item.action}</p>
-                            </div>
+                            </div> 
                         </div>
                         <span className="text-[10px] bg-gray-100 px-2 py-1 rounded text-gray-400">
                             {item.time}
