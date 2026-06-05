@@ -33,7 +33,7 @@ export default function Header() {
                 </div>
                 <div className="flex items-center space-x-3 border-l pl-6">
                     <div className="text-right">
-                        <p className="text-sm font-bold">Putri Agustin</p>
+                        <p className="text-sm font-bold">Putri Agustine</p>
                         <p className="text-xs text-gray-400">Admin</p>
                     </div>
                     <img src="https://down-id.img.susercontent.com/file/id-11134207-81zth-mewoo3ks67lxaa@resize_w900_nl.webp" className="w-10 h-10 rounded-full" alt="avatar" />
