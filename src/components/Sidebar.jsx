@@ -67,7 +67,7 @@ export default function Sidebar() {
                         </NavLink>
                     </li>
 
-                    {/* Customers */}
+                    {/* Products */}
                     <li>
                         <NavLink 
                             to="/products"
@@ -79,7 +79,7 @@ export default function Sidebar() {
                         </NavLink>
                     </li>
 
-                    {/* Customers */}
+                    {/* Components */}
                     <li>
                         <NavLink 
                             to="/components"
@@ -88,6 +88,18 @@ export default function Sidebar() {
                         >
                             <LuUsers className="mr-4 text-xl" />
                             Components
+                        </NavLink>
+                    </li>
+
+                    {/* Fitur Xyz */}
+                    <li>
+                        <NavLink 
+                            to="/fitur-xyz"
+                            id="menu-4" 
+                            className={menuClass}
+                        >
+                            <LuUsers className="mr-4 text-xl" />
+                            Fitur Xyz
                         </NavLink>
                     </li>
 

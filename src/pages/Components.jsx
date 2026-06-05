@@ -22,6 +22,9 @@ const tableProducts = [
 
 export default function Products() {
   return (
+
+
+
     <div id="dashboard-container">
       <PageHeader title="Components" subtitle="Dashboard / Components" />
 
