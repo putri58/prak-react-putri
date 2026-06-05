@@ -23,7 +23,7 @@ export default function FiturXyz() {
       {/* Content */}
       <div>
         <p className="text-gray-700">
-          Ini Halaman Fitur XYZ
+          Ini Adalah Halaman Fitur XYZ
         </p>
       </div>
     </div>
