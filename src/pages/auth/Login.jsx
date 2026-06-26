@@ -1,8 +1,8 @@
-import axios from "axios";
 import { useState } from "react";
 import { BsFillExclamationDiamondFill } from "react-icons/bs";
 import { ImSpinner2 } from "react-icons/im";
 import { useNavigate } from "react-router-dom";
+import { supabase } from "../../lib/supabaseClient";
 
 export default function Login() {
   /* navigate, state & handleChange*/
@@ -16,10 +16,10 @@ export default function Login() {
 
   const handleChange = (evt) => {
     const { name, value } = evt.target;
-    setDataForm({
-      ...dataForm,
+    setDataForm((prev) => ({
+      ...prev,
       [name]: value,
-    });
+    }));
   };
 
   /* process form */
@@ -27,33 +27,29 @@ export default function Login() {
     e.preventDefault();
 
     setLoading(true);
-    setError(false);
+    setError("");
 
-    axios
-      .post("https://dummyjson.com/user/login", {
-        username: dataForm.email,
+    try {
+      const { data, error: signInError } = await supabase.auth.signInWithPassword({
+        email: dataForm.email,
         password: dataForm.password,
-      })
-      .then((response) => {
-        // Jika status bukan 200, tampilkan pesan error
-        if (response.status !== 200) {
-          setError(response.data.message);
-          return;
-        }
-
-        // Redirect ke dashboard jika login sukses
-        navigate("/");
-      })
-      .catch((err) => {
-        if (err.response) {
-          setError(err.response.data.message || "An error occurred");
-        } else {
-          setError(err.message || "An unknown error occurred");
-        }
-      })
-      .finally(() => {
-        setLoading(false);
       });
+
+      if (signInError) {
+        setError(signInError.message);
+        return;
+      }
+
+      if (data?.user) {
+        // Redirect to home — AuthContext & ProtectedRoute will handle
+        // the correct redirect based on role
+        navigate("/");
+      }
+    } catch (err) {
+      setError(err.message || "An unknown error occurred");
+    } finally {
+      setLoading(false);
+    }
   };
 
   /* error & loading status */

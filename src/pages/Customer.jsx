@@ -1,99 +1,96 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { supabase } from "../lib/supabaseClient";
 import PageHeader from "../components/PageHeader";
-import { customers } from "../data/customers";
 
 export default function Customers() {
-  const [showForm, setShowForm] = useState(false);
+  const [customers, setCustomers] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
+
+  const fetchCustomers = async () => {
+    try {
+      setLoading(true);
+      setError("");
+      const { data, error: fetchError } = await supabase
+        .from("profiles")
+        .select("*")
+        .order("created_at", { ascending: false });
+
+      if (fetchError) throw fetchError;
+      setCustomers(data || []);
+    } catch (err) {
+      setError("Gagal memuat data customer: " + err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchCustomers();
+  }, []);
+
+  const getTierBadge = (tier) => {
+    const colors = { bronze: "bg-yellow-600", silver: "bg-gray-500", gold: "bg-green-500" };
+    return colors[tier] || "bg-gray-400";
+  };
+
+  if (loading && customers.length === 0) {
+    return (
+      <div className="flex items-center justify-center p-12">
+        <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-green-500"></div>
+      </div>
+    );
+  }
 
   return (
     <div>
-      <PageHeader title="Customer List">
-        <button
-          onClick={() => setShowForm(true)}
-          className="bg-green-500 text-white px-4 py-2 rounded"
-        >
-          Add New Customer
-        </button>
-      </PageHeader>
+      <PageHeader title="Customer List" />
+
+      {error && (
+        <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
+          {error}
+        </div>
+      )}
 
       <div className="bg-white p-4 rounded shadow mt-4">
-        <p className="mb-4">Ini Halaman Customer</p>
+        <p className="mb-4 text-gray-600">Total Members: {customers.length}</p>
 
-        <div className="mt-4 overflow-x-auto">
-          <table className="w-full text-left border-collapse">
-            <thead>
-              <tr className="border-b-2 border-gray-100">
-                <th className="py-2 px-2 font-semibold text-sm">ID</th>
-                <th className="py-2 px-2 font-semibold text-sm">Name</th>
-                <th className="py-2 px-2 font-semibold text-sm">Email</th>
-                <th className="py-2 px-2 font-semibold text-sm">Phone</th>
-                <th className="py-2 px-2 font-semibold text-sm">Loyalty</th>
-              </tr>
-            </thead>
-            <tbody>
-              {customers.map((item) => (
-                <tr key={item.id} className="border-b last:border-0 hover:bg-gray-50">
-                  <td className="py-3 px-2 text-sm">{item.id}</td>
-                  <td className="py-3 px-2 text-sm font-medium">{item.name}</td>
-                  <td className="py-3 px-2 text-sm">{item.email}</td>
-                  <td className="py-3 px-2 text-sm">{item.phone}</td>
-                  <td className="py-3 px-2 text-sm">
-                    <span
-                      className={`px-2 py-1 rounded text-white text-xs inline-block
-                      ${
-                        item.loyalty === "Bronze"
-                          ? "bg-yellow-600"
-                          : item.loyalty === "Silver"
-                          ? "bg-gray-500"
-                          : "bg-green-500"
-                      }`}
-                    >
-                      {item.loyalty}
-                    </span>
-                  </td>
+        {customers.length === 0 ? (
+          <p className="text-gray-500 text-center py-8">Belum ada member terdaftar.</p>
+        ) : (
+          <div className="mt-4 overflow-x-auto">
+            <table className="w-full text-left border-collapse">
+              <thead>
+                <tr className="border-b-2 border-gray-100">
+                  <th className="py-2 px-2 font-semibold text-sm">No</th>
+                  <th className="py-2 px-2 font-semibold text-sm">Name</th>
+                  <th className="py-2 px-2 font-semibold text-sm">Email</th>
+                  <th className="py-2 px-2 font-semibold text-sm">Role</th>
+                  <th className="py-2 px-2 font-semibold text-sm">Tier</th>
+                  <th className="py-2 px-2 font-semibold text-sm">Points</th>
+                  <th className="py-2 px-2 font-semibold text-sm">Joined</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-
-        {showForm && (
-          <div className="bg-gray-100 p-4 mt-6 rounded shadow">
-            <h3 className="font-bold mb-3 text-lg">Add New Customer</h3>
-
-            <input
-              placeholder="Customer Name"
-              className="border p-2 w-full mb-2 rounded"
-            />
-
-            <input
-              placeholder="Email"
-              className="border p-2 w-full mb-2 rounded"
-            />
-
-            <input
-              placeholder="Phone"
-              className="border p-2 w-full mb-2 rounded"
-            />
-
-            <select className="border p-2 w-full mb-3 rounded">
-              <option>Bronze</option>
-              <option>Silver</option>
-              <option>Gold</option>
-            </select>
-
-            <div className="flex gap-2">
-              <button className="bg-green-500 text-white px-4 py-2 rounded">
-                Submit
-              </button>
-
-              <button
-                onClick={() => setShowForm(false)}
-                className="bg-gray-400 text-white px-4 py-2 rounded"
-              >
-                Cancel
-              </button>
-            </div>
+              </thead>
+              <tbody>
+                {customers.map((item, index) => (
+                  <tr key={item.id} className="border-b last:border-0 hover:bg-gray-50">
+                    <td className="py-3 px-2 text-sm">{index + 1}</td>
+                    <td className="py-3 px-2 text-sm font-medium">{item.full_name}</td>
+                    <td className="py-3 px-2 text-sm">{item.email}</td>
+                    <td className="py-3 px-2 text-sm capitalize">{item.role}</td>
+                    <td className="py-3 px-2 text-sm">
+                      <span className={`px-2 py-1 rounded text-white text-xs inline-block ${getTierBadge(item.tier)}`}>
+                        {item.tier}
+                      </span>
+                    </td>
+                    <td className="py-3 px-2 text-sm">{item.points}</td>
+                    <td className="py-3 px-2 text-sm text-gray-500">
+                      {new Date(item.created_at).toLocaleDateString("id-ID")}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         )}
       </div>
